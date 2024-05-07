@@ -1,12 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <display-name>rentcar-server</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-  </welcome-file-list>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+
+	<display-name>rentcar-server</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+
+	<!-- 보드 폼 서블릿 -->
+	<servlet>
+		<servlet-name>board</servlet-name>
+		<jsp-file>/views/board/boardForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>board</servlet-name>
+		<url-pattern>/board</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>myBoard</servlet-name>
+		<jsp-file>/views/board/myBoardForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>myBoard</servlet-name>
+		<url-pattern>/myBoard</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>viewBoard</servlet-name>
+		<jsp-file>/views/board/viewBoardForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>viewBoard</servlet-name>
+		<url-pattern>/viewBoard</url-pattern>
+	</servlet-mapping>
+
+	<!-- 유저 폼 서블릿 -->
+	<servlet>
+		<servlet-name>joinForm</servlet-name>
+		<jsp-file>/views/user/joinForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>joinForm</servlet-name>
+		<url-pattern>/join</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>loginForm</servlet-name>
+		<jsp-file>/views/user/loginForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginForm</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>myPage</servlet-name>
+		<jsp-file>/views/user/mypage.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>myPage</servlet-name>
+		<url-pattern>/mypage</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>updateUser</servlet-name>
+		<jsp-file>/views/user/updateUserForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateUser</servlet-name>
+		<url-pattern>/updateUser</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>deleteUser</servlet-name>
+		<jsp-file>/views/user/deleteUserForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deleteUser</servlet-name>
+		<url-pattern>/deleteUser</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>mainForm</servlet-name>
+		<jsp-file>/views/common/mainForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mainForm</servlet-name>
+		<url-pattern>/mainForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>header</servlet-name>
+		<jsp-file>/views/module/header.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>header</servlet-name>
+		<url-pattern>/header</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>footer</servlet-name>
+		<jsp-file>/views/module/footer.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>footer</servlet-name>
+		<url-pattern>/footer</url-pattern>
+	</servlet-mapping>
+
+	<!-- 액션폼 서블릿 유저 -->
+
+	<servlet>
+		<servlet-name>JoinFormAction</servlet-name>
+		<servlet-class>rentcarServer.user.controller.JoinFormAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JoinFormAction</servlet-name>
+		<url-pattern>/JoinForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LoginFormAction</servlet-name>
+		<servlet-class>rentcarServer.user.controller.LoginFormAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginFormAction</servlet-name>
+		<url-pattern>/LoginForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UpdateFormAction</servlet-name>
+		<servlet-class>rentcarServer.user.controller.UpdateUserFormAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateFormAction</servlet-name>
+		<url-pattern>/UpdateFormAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LogoutAction</servlet-name>
+		<servlet-class>rentcarServer.user.controller.LogoutAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogoutAction</servlet-name>
+		<url-pattern>/LogoutAction</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DeleteAction</servlet-name>
+		<servlet-class>rentcarServer.user.controller.DeleteFormAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteAction</servlet-name>
+		<url-pattern>/DeleteAction</url-pattern>
+	</servlet-mapping>
+
+	<!-- 보드 컨트롤러 -->
+
+	<servlet>
+		<servlet-name>DeleteFormAction</servlet-name>
+		<servlet-class>rentcarServer.board.controller.DeleteFormAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteFormAction</servlet-name>
+		<url-pattern>/DeleteBoard</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>UpdateBoardAction</servlet-name>
+		<servlet-class>rentcarServer.board.controller.UpdateBoardFormAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateBoardAction</servlet-name>
+		<url-pattern>/UpdateBoardAction</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>WriteAction</servlet-name>
+		<servlet-class>rentcarServer.board.controller.WriteFormAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WriteAction</servlet-name>
+		<url-pattern>/WriteAction</url-pattern>
+	</servlet-mapping>
+
 </web-app>
