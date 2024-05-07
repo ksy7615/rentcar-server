@@ -1,42 +1,39 @@
-<%@page import="rentcarServer.board.model.BoardResponseDto"%>
 <%@page import="rentcarServer.board.model.BoardDao"%>
+<%@page import="rentcarServer.board.model.BoardResponseDto"%>
 <%@page import="java.util.List"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 </head>
-<jsp:include page="/header"></jsp:include>
+<c:import url="/header" />
 <body>
-	<h1>문의사항</h1>
 	<section id="board">
+		<h1>게시판</h1>
 
 		<table border="1">
-			<tr>
-				<th>글번호</th>
-				<th>작성자</th>
-				<th>제목</th>
-			</tr>
-			<%
-			List<BoardResponseDto> list = (List) session.getAttribute("list");
-			for(BoardResponseDto board : list) {
-			%>
-			<tr>
-				<td><%=board.isAdmin() ? "공지" : board.getBoardCode()%></td>
-				<td><%=board.getUserId()%></td>
-				<td><a href="/detail?boardCode=<%=board.getBoardCode()%>">
-						<%=board.getTitle()%>
-				</a></td>
-			</tr>
-			<%
-			}
-			%>
+			<tr>번호</tr>
+			<tr>제목</tr>
+			<tr>작성자</tr>
+			<tr>작성일</tr>
 		</table>
-		<button onclick="location.href='/write'">게시물 작성</button>
-
+		<%
+		BoardDao boardDao = BoardDao.getInstance();
+		List<BoardResponseDto> boardList = boardDao.findBoardAll();
+		%>
+		<% for (BoardResponseDto board : boardList) { %>
+        <tr>
+            <td><%= board.getBoardCode() %></td>
+            <td><a href="http://localhost:8080/viewBoard?id=<%= board.getBoardCode() %>"><%= board.getTitle() %></a></td>
+            <td><%= board.getUserId() %></td>
+        </tr>
+    <% } %>
+		
+	<button onclick="location.href='/write'">게시물 작성</button>
+	
 	</section>
 </body>
+<jsp:include page="/footer"></jsp:include>
 </html>
