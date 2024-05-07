@@ -1,0 +1,111 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFF9D0; /* 연한 베이지 */
+}
+
+/* Header styles */
+header {
+    background-color: #5AB2FF; /* 진한 파랑 */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+#logo h1 {
+    font-size: 2em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* 로고에 그림자 효과 추가 */
+}
+
+/* Form styles */
+#form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#select, #query {
+    height: 30px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#select {
+    width: 120px;
+    background-color: #CAF4FF; /* 연한 파랑 */
+    border: none;
+}
+
+#query {
+    width: 200px;
+}
+
+input[type="submit"] {
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #A0DEFF; /* 연한 하늘색 */
+    border: none;
+}
+
+input[type="submit"]:hover {
+    background-color: #5AB2FF; /* 진한 파랑 */
+}
+
+/* Navigation styles */
+nav {
+    margin-top: 20px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+ul li a div {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+ul li a div:hover {
+    background-color: #A0DEFF; /* 연한 하늘색 */
+}
+
+/* My Page button styles */
+#mypage-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#mypage-button button {
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #CAF4FF; /* 연한 파랑 */
+    border: none;
+    border-radius: 50%; /* 버튼을 동그랗게 만듦 */
+}
+
+#mypage-button button:hover {
+    background-color: #5AB2FF; /* 진한 파랑 */
+}

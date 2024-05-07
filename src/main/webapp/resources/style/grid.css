@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    margin-left: 20px; /* Add left margin for space */
+}
+
+#logo h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+#form-container {
+    flex: 1; /* Occupy remaining space */
+    margin-left: 20px; /* Add left margin for space */
+}
+
+#form {
+    display: flex; /* Align form elements horizontally */
+    align-items: center; /* Vertically center form elements */
+}
+
+#select, #query {
+    height: 30px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#select {
+    width: 120px;
+}
+
+#query {
+    width: 200px;
+}
+
+input[type="submit"], button {
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    background-color: transparent; /* Set background to transparent */
+}
+
+#mypage-button {
+    margin-left: auto; /* Move button to the right */
+    margin-right: 20px; /* Add right margin for space */
+}
+
+#mypage-button button {
+    padding: 0; /* Remove padding */
+}
+
+nav {
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+ul li a div {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+ul li a div:hover {
+    background-color: #555;
+}
