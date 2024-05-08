@@ -65,7 +65,7 @@ public class DeleteBoardFormAction extends HttpServlet {
 			session.removeAttribute("board");
 			response.sendRedirect("/myBoard");
 		} else {
-			response.sendRedirect("/deleteBoard");
+			response.sendRedirect("/viewBoard");
 		}
 	}
 

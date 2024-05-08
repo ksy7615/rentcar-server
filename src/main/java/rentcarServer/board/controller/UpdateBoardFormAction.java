@@ -69,15 +69,15 @@ public class UpdateBoardFormAction extends HttpServlet {
 
 			if (board == null) {
 				// 저장 실패
-				response.sendRedirect("/myBoard");
+				response.sendRedirect("/board");
 			} else {
 				// 저장 성공
 				System.out.println("수정이 완료되었습니다.");
 
-				session.setAttribute("board", null);
-				response.sendRedirect("/board");
+				session.setAttribute("board", board);
+				response.sendRedirect("/viewBoard?boardCode=" + board.getBoardCode());
 			}
 		} else
-			response.sendRedirect("/mypage");
+			response.sendRedirect("/board");
 	}
 }
