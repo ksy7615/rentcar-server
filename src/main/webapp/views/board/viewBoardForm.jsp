@@ -12,21 +12,37 @@
 </head>
 <c:import url="/header" />
 <body>
-<h1>게시글 확인</h1>
-    <%
+	<h1>게시글 확인</h1>
+	<%
         String boardCode = request.getParameter("boardCode");
+		String id = (String) session.getAttribute("userId");
+	
         if (boardCode != null) {
             BoardDao boardDao = BoardDao.getInstance();
-            BoardResponseDto board = boardDao.findBoard(Integer.parseInt(boardCode));
+            int boardId = Integer.parseInt(boardCode);
+            BoardResponseDto board = boardDao.findBoard(boardId);
             if (board != null) {
+            	String userId = board.getUserId();
             	String boardTitle = board.getTitle();
                 String boardContent = board.getContent();
     %>
-                <div>
-                	<p><%= boardTitle %></p>
-                    <p><%= boardContent %></p>
-                </div>
-    <%
+	<div>
+		<p><%= boardTitle %></p>
+		<p><%= boardContent %></p>
+	</div>
+	<c:if test="${user.userId == userId }">
+		<form method="POST" action="/updateBoard">
+			<input type="hidden" name="boardCode" value="${boardId}">
+			<button type="submit">수정하기</button>
+		</form>
+	</c:if>
+	<c:if test="${user.userId == userId }">
+		<form method="POST" action="/DeleteBoard" >
+			<input type="hidden" name="boardCode" value="${boardId}">
+			<button type="submit">삭제하기</button>
+		</form>
+	</c:if>
+	<%
             }
         }
     %>
