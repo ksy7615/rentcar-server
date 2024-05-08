@@ -16,14 +16,14 @@ import rentcarServer.board.model.BoardResponseDto;
 /**
  * Servlet implementation class DeleteFormAction
  */
-@WebServlet("/DeleteFormAction")
-public class DeleteFormAction extends HttpServlet {
+@WebServlet("/DeleteBoardFormAction")
+public class DeleteBoardFormAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public DeleteFormAction() {
+	public DeleteBoardFormAction() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
