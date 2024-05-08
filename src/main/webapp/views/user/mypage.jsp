@@ -17,6 +17,7 @@
 
 		<button onclick="location.href='/updateUser'">회원정보 수정</button>
 		<button onclick="location.href='/deleteUser'">회원 탈퇴</button>
+		<button onclick="location.href='/myBoard'">문의 내역</button>
 	</section>
 </body>
 <jsp:include page="/footer"></jsp:include>
