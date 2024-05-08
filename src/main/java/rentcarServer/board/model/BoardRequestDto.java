@@ -33,6 +33,13 @@ public class BoardRequestDto {
 		this.title = title;
 		this.content = content;
 	}
+	
+	public BoardRequestDto(String userId, String title, String content) {
+		super();
+		this.userId = userId;
+		this.title = title;
+		this.content = content;
+	}
 
 	public boolean isAdmin() {
 		return admin;

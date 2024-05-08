@@ -86,7 +86,7 @@ public class BoardDao {
 		return board;
 	}
 
-	private BoardResponseDto findBoard(int boardId) {
+	public BoardResponseDto findBoard(int boardId) {
 		conn = DBConnection.getConnection();
 		BoardResponseDto board = null;
 		String sql = "SELECT board_code, user_id, title, content, admin FROM board WHERE board_code = ?";
