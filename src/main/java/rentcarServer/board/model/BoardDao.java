@@ -53,6 +53,33 @@ public class BoardDao {
 		return list;
 
 	}
+	
+	public List<BoardResponseDto> findBoardAllByUserId(String userId) {
+		List<BoardResponseDto> list = new ArrayList<BoardResponseDto>();
+		conn = DBConnection.getConnection();
+		
+		String sql = "SELECT * FROM board WHERE user_id=? ORDER BY reg_date DESC";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userId);
+	        rs = pstmt.executeQuery();
+	        
+			while (rs.next()) {
+				int boardCode = rs.getInt("board_code");
+	            String title = rs.getString("title");
+	            String content = rs.getString("content");
+	            boolean admin = rs.getBoolean("admin");
+	            Timestamp reg_date = rs.getTimestamp("reg_date");
+				BoardResponseDto board = new BoardResponseDto(boardCode, userId, title, content, admin, reg_date);
+				list.add(board);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBConnection.close(conn, pstmt, rs);
+		}
+		return list;
+	}
 
 	public BoardResponseDto createBoard(BoardRequestDto boardRequestDto) {
 		conn = DBConnection.getConnection();
