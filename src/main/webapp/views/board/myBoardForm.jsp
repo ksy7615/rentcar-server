@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<button onclick="location.href='/UpdateBoardAction'">수정하기</button>
+	<button onclick="location.href='/DeleteBoard'">삭제하기</button>
 </body>
 </html>
