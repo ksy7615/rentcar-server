@@ -26,12 +26,11 @@
 		<% for (BoardResponseDto board : boardList) { %>
         <tr>
             <td><%= board.getBoardCode() %></td>
-            <td><a href="http://localhost:8080/viewBoard?id=<%= board.getBoardCode() %>"><%= board.getTitle() %></a></td>
+            <td><a href="http://localhost:8080/viewBoard?boardCode=<%= board.getBoardCode() %>"><%= board.getTitle() %></a></td>
             <td><%= board.getUserId() %></td>
         </tr>
     <% } %>
-		
-	<button onclick="location.href='/write'">게시물 작성</button>
+	<button onclick="location.href='/writeBoard'">게시물 작성</button>
 	
 	</section>
 </body>
