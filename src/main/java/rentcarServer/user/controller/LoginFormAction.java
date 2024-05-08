@@ -66,7 +66,6 @@ public class LoginFormAction extends HttpServlet {
 			}
 			// 정보가 일치하면 
 			// 로그인 처리 후, 페이지 이동
-			
 		}else{
 			response.sendRedirect("/login");
 		}
