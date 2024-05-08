@@ -34,5 +34,5 @@
 	
 	</section>
 </body>
-<jsp:include page="/footer"></jsp:include>
+<c:import url="/footer" />
 </html>
