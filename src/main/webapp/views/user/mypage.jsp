@@ -20,5 +20,5 @@
 		<button onclick="location.href='/myBoard'">문의 내역</button>
 	</section>
 </body>
-<jsp:include page="/footer"></jsp:include>
+<c:import url="/footer" />
 </html>

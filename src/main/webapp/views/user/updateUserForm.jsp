@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="/resources/style/form.css">
 </head>
-<jsp:include page="/header"></jsp:include>
+<c:import url="/header" />
 <body>
 	<section id="root">
 		<h2>정보수정</h2>
@@ -48,5 +49,5 @@
 	<script src="/resources/script/validation-join.js"></script>
 	<script src="/resources/script/validation-id.js"></script>
 </body>
-<jsp:include page="/footer"></jsp:include>
+<c:import url="/footer" />
 </html>
