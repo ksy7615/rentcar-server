@@ -66,7 +66,12 @@ public class WriteFormAction extends HttpServlet {
 			isValid = false;
 
 		if (isValid) {			
-			BoardRequestDto boardDto = new BoardRequestDto(userId, title, content);
+			BoardRequestDto boardDto = new BoardRequestDto();
+			
+			boardDto.setUserId(userId);
+			boardDto.setTitle(title);
+			boardDto.setContent(content);
+			
 			BoardResponseDto board = boardDao.createBoard(boardDto);
 			
 			if (board == null) {
@@ -76,7 +81,7 @@ public class WriteFormAction extends HttpServlet {
 			} else {
 				//저장 성공
 				System.out.println("board : " + board);
-				response.sendRedirect("/myboard");
+				response.sendRedirect("/viewBoard?boardCode=" + board.getBoardCode());
 			}
 		} else
 			response.sendRedirect("/board");
