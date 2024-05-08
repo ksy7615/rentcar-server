@@ -1,6 +1,6 @@
 package rentcarServer.user.model;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 public class User {
 
