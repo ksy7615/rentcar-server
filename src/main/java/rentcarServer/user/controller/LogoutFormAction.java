@@ -11,14 +11,14 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class LogoutAction
  */
-@WebServlet("/LogoutAction")
-public class LogoutAction extends HttpServlet {
+@WebServlet("/LogoutFormAction")
+public class LogoutFormAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LogoutAction() {
+    public LogoutFormAction() {
         super();
         // TODO Auto-generated constructor stub
     }

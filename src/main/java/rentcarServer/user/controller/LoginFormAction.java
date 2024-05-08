@@ -31,8 +31,9 @@ public class LoginFormAction extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		HttpSession session = request.getSession();
+		String userId = (String) session.getAttribute("userId"); // 세션에서 현재 로그인한 사용자의 아이디 가져오기
+		System.out.println(userId);
 	}
 
 	/**
@@ -55,6 +56,7 @@ public class LoginFormAction extends HttpServlet {
 			UserDao userDao = UserDao.getInstance();
 			UserResponseDto user= userDao.findUserByIdAndPassword(id, password);
 			HttpSession session = request.getSession();
+			session.setAttribute("userId", id);
 
 			if(user != null){
 				session.setAttribute("user", user);
