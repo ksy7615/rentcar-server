@@ -10,8 +10,8 @@
 <body>
 	<h1>문의 작성</h1>
 	<form method="POST" action="/WriteAction">
-		<input type="text" placeholder="제목을 입력하세요.">
-		<input type="text" placeholder="내용을 입력하세요.">
+		<input type="text" name="title" placeholder="제목을 입력하세요.">
+		<input type="text" name="content" placeholder="내용을 입력하세요.">
 		
 		<input type="submit" value="등록하기">
 	</form>
