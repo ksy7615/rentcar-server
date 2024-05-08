@@ -14,10 +14,10 @@
 <body>
 <h1>게시글 확인</h1>
     <%
-        String boardId = request.getParameter("id");
-        if (boardId != null) {
+        String boardCode = request.getParameter("boardCode");
+        if (boardCode != null) {
             BoardDao boardDao = BoardDao.getInstance();
-            BoardResponseDto board = boardDao.findBoard(Integer.parseInt(boardId));
+            BoardResponseDto board = boardDao.findBoard(Integer.parseInt(boardCode));
             if (board != null) {
             	String boardTitle = board.getTitle();
                 String boardContent = board.getContent();
