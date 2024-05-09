@@ -6,22 +6,26 @@
 
 	<display-name>rentcar-server</display-name>
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
-		<welcome-file>default.htm</welcome-file>
+		<welcome-file>/views/common/mainForm.jsp</welcome-file>
 	</welcome-file-list>
 
 	<!-- 보드 폼 서블릿 -->
 	<servlet>
 		<servlet-name>board</servlet-name>
-		<jsp-file>/views/board/boardForm.jsp</jsp-file>
+		<servlet-class>rentcarServer.board.controller.BoardListAction</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>board</servlet-name>
 		<url-pattern>/board</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>boardList</servlet-name>
+		<jsp-file>/views/board/boardForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardList</servlet-name>
+		<url-pattern>/board/list</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -34,12 +38,39 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>updateBoard</servlet-name>
+		<jsp-file>/views/board/updateBoardForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateBoard</servlet-name>
+		<url-pattern>/updateBoard</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name>viewBoard</servlet-name>
 		<jsp-file>/views/board/viewBoardForm.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>viewBoard</servlet-name>
 		<url-pattern>/viewBoard</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>boardViewAction</servlet-name>
+		<servlet-class>rentcarServer.board.controller.BoardViewAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardViewAction</servlet-name>
+		<url-pattern>/board/view</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>writeBoard</servlet-name>
+		<jsp-file>/views/board/writeBoardForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>writeBoard</servlet-name>
+		<url-pattern>/writeBoard</url-pattern>
 	</servlet-mapping>
 
 	<!-- 유저 폼 서블릿 -->
@@ -145,11 +176,11 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>LogoutAction</servlet-name>
-		<servlet-class>rentcarServer.user.controller.LogoutAction</servlet-class>
+		<servlet-name>LogoutFormAction</servlet-name>
+		<servlet-class>rentcarServer.user.controller.LogoutFormAction</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>LogoutAction</servlet-name>
+		<servlet-name>LogoutFormAction</servlet-name>
 		<url-pattern>/LogoutAction</url-pattern>
 	</servlet-mapping>
 
@@ -165,14 +196,14 @@
 	<!-- 보드 컨트롤러 -->
 
 	<servlet>
-		<servlet-name>DeleteFormAction</servlet-name>
-		<servlet-class>rentcarServer.board.controller.DeleteFormAction</servlet-class>
+		<servlet-name>DeleteBoardAction</servlet-name>
+		<servlet-class>rentcarServer.board.controller.DeleteBoardFormAction</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>DeleteFormAction</servlet-name>
+		<servlet-name>DeleteBoardAction</servlet-name>
 		<url-pattern>/DeleteBoard</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>UpdateBoardAction</servlet-name>
 		<servlet-class>rentcarServer.board.controller.UpdateBoardFormAction</servlet-class>
@@ -181,7 +212,7 @@
 		<servlet-name>UpdateBoardAction</servlet-name>
 		<url-pattern>/UpdateBoardAction</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>WriteAction</servlet-name>
 		<servlet-class>rentcarServer.board.controller.WriteFormAction</servlet-class>
