@@ -9,27 +9,31 @@
 <head>
 </head>
 <c:import url="/header" />
+<link rel="stylesheet" href="/resources/style/board.css">
 <body>
 	<section id="board">
 		<h1>게시판</h1>
 
 		<table border="1">
-			<tr>번호</tr>
-			<tr>제목</tr>
-			<tr>작성자</tr>
-			<tr>작성일</tr>
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>작성일</th>
+				</tr>
+			</thead>
+			<tbody>
+			<c:forEach var="board" items="${boardList }">
+				<tr>
+					<td>${board.boardCode }</td>
+					<td><a href="/board/view?boardCode=${board.boardCode }">${board.title }</a></td>
+					<td>${board.userId }</td>
+					<td>${board.regDate }</td>
+				</tr>
+			</c:forEach>
+			</tbody>
 		</table>
-		<%
-		BoardDao boardDao = BoardDao.getInstance();
-		List<BoardResponseDto> boardList = boardDao.findBoardAll();
-		%>
-		<% for (BoardResponseDto board : boardList) { %>
-        <tr>
-            <td><%= board.getBoardCode() %></td>
-            <td><a href="http://localhost:8080/viewBoard?boardCode=<%= board.getBoardCode() %>"><%= board.getTitle() %></a></td>
-            <td><%= board.getUserId() %></td>
-        </tr>
-    <% } %>
 	<button onclick="location.href='/writeBoard'">게시물 작성</button>
 	
 	</section>

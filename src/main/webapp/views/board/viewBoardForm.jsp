@@ -13,38 +13,23 @@
 <c:import url="/header" />
 <body>
 	<h1>게시글 확인</h1>
-	<%
-        String boardCode = request.getParameter("boardCode");
-		String id = (String) session.getAttribute("userId");
-	
-        if (boardCode != null) {
-            BoardDao boardDao = BoardDao.getInstance();
-            int boardId = Integer.parseInt(boardCode);
-            BoardResponseDto board = boardDao.findBoard(boardId);
-            if (board != null) {
-            	String userId = board.getUserId();
-            	String boardTitle = board.getTitle();
-                String boardContent = board.getContent();
-    %>
 	<div>
-		<p><%= boardTitle %></p>
-		<p><%= boardContent %></p>
-	</div>
-	<c:if test="${user.userId == userId }">
-		<form method="POST" action="/updateBoard">
-			<input type="hidden" name="boardCode" value="${boardId}">
+		<p>${board.boardCode }</p>
+		<p>${requestScope.board.title }</p>
+		<p>${board.content }</p>
+		
+	<c:if test="${board.userId eq user.userId}">
+		<form method="POST" action="/updateBoard?boardCode=${board.boardCode}">
+			<input type="hidden" name="boardCode" value="${board.boardCode}">
 			<button type="submit">수정하기</button>
 		</form>
 	</c:if>
-	<c:if test="${user.userId == userId }">
-		<form method="POST" action="/DeleteBoard" >
-			<input type="hidden" name="boardCode" value="${boardId}">
+	<c:if test="${board.userId eq user.userId}">
+		<form method="POST" action="/DeleteBoard?boardCode=${board.boardCode}" >
+			<input type="hidden" name="boardCode" value="${board.boardCode}">
 			<button type="submit">삭제하기</button>
 		</form>
 	</c:if>
-	<%
-            }
-        }
-    %>
+	</div>
 </body>
 </html>
