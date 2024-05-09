@@ -1,17 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 </head>
 <link rel="stylesheet" href="/resources/style/main.css">
-<jsp:include page="/header"></jsp:include>
+<c:import url="/header" />
 <body>
 	<div id="main-container">
 		<div id="loginform">
 			<button>회원가입</button>
-			<button>로그인/로그아웃*c태그로 변환</button>
+			<button onclick="location.href='/login'">로그인/로그아웃*c태그로 변환</button>
 			<button>빠른 예약</button>
 			<button>예약확인 바로가기</button>
 		</div>
@@ -27,6 +28,6 @@
 			<img src="https://flexible.img.hani.co.kr/flexible/normal/640/377/imgdb/resize/2016/0721/146900789689_20160721.JPG">
 		</div>
 	</div>
-<jsp:include page="/footer"></jsp:include>
+<c:import url="/footer" />
 </body>
 </html>
