@@ -1,6 +1,7 @@
 package rentcarServer.board.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -48,24 +49,25 @@ public class DeleteBoardFormAction extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		BoardDao boardDao = BoardDao.getInstance();
-
-		BoardResponseDto board = (BoardResponseDto) session.getAttribute("board");
-
-		int boardCode = board.getBoardCode();
-		String userId = request.getParameter("userId");
-
-		BoardRequestDto boardDto = new BoardRequestDto();
-
-		boardDto.setBoardCode(boardCode);
-		boardDto.setUserId(userId);
-
-		boolean result = boardDao.deleteBoard(boardDto);
-
+		List<BoardResponseDto> list = boardDao.findBoardAll();
+		String id = (String) session.getAttribute("userId");
+		String boardCode = (String) session.getAttribute("boardCode");
+		
+		boolean result = false;
+		for (BoardResponseDto board : list) {
+			if (board.getUserId().equals(id)) {
+				request.setAttribute("board", board);						
+				int boardId = board.getBoardCode();
+				BoardRequestDto boardDto = new BoardRequestDto();
+				result = boardDao.deleteBoard(boardDto);
+			}
+		}
+		
 		if (result) {
 			session.removeAttribute("board");
-			response.sendRedirect("/myBoard");
+			request.getRequestDispatcher("/viewBoard").forward(request, response);
 		} else {
-			response.sendRedirect("/viewBoard");
+			response.sendRedirect("/board");
 		}
 	}
 

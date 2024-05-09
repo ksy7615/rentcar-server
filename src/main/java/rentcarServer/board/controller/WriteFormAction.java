@@ -49,10 +49,6 @@ public class WriteFormAction extends HttpServlet {
 		String userId = user.getUserId();
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		
-		System.out.println(userId);
-		System.out.println(title);
-		System.out.println(content);
 
 		// Backend 에서 전달받은 데이터에 대한 유효성 검증 
 		boolean isValid = true;
