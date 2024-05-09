@@ -40,8 +40,8 @@ public class BoardDao {
 				String title = rs.getString(3);
 				String content = rs.getString(4);
 				boolean admin = rs.getBoolean(5);
-				Timestamp reg_date = rs.getTimestamp(6);
-				BoardResponseDto board = new BoardResponseDto(boardCode, userId, title, content, admin, reg_date);
+				Timestamp regDate = rs.getTimestamp(6);
+				BoardResponseDto board = new BoardResponseDto(boardCode, userId, title, content, admin, regDate);
 				list.add(board);
 			}
 		} catch (SQLException e) {

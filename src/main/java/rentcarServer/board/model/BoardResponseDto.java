@@ -19,9 +19,8 @@ public class BoardResponseDto {
 		this.content = content;
 		this.admin = admin;
 	}
-
-	public BoardResponseDto(int boardCode, String userId, String title, String content, boolean admin,
-			Timestamp regDate) {
+	
+	public BoardResponseDto(int boardCode, String userId, String title, String content, boolean admin, Timestamp regDate) {
 		super();
 		this.boardCode = boardCode;
 		this.userId = userId;
@@ -31,16 +30,12 @@ public class BoardResponseDto {
 		this.regDate = regDate;
 	}
 
-	public boolean isAdmin() {
-		return admin;
+	public int getBoardCode() {
+		return boardCode;
 	}
 
 	public String getUserId() {
 		return userId;
-	}
-
-	public int getBoardCode() {
-		return boardCode;
 	}
 
 	public String getTitle() {
@@ -51,16 +46,20 @@ public class BoardResponseDto {
 		return content;
 	}
 
-	public void setAdmin(boolean admin) {
-		this.admin = admin;
+	public boolean isAdmin() {
+		return admin;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public Timestamp getRegDate() {
+		return regDate;
 	}
 
 	public void setBoardCode(int boardCode) {
 		this.boardCode = boardCode;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public void setTitle(String title) {
@@ -70,5 +69,15 @@ public class BoardResponseDto {
 	public void setContent(String content) {
 		this.content = content;
 	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+
+	public void setRegDate(Timestamp regDate) {
+		this.regDate = regDate;
+	}
+
+	
 
 }
