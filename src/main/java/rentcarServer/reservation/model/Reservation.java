@@ -6,7 +6,6 @@ public class Reservation {
 	private int rezNum;
 	private String userId;
 	private int carCode;
-	private String carName;
 	private int carPrice;
 	private int totalPrice;
 	private Timestamp borrowDate;
@@ -14,14 +13,14 @@ public class Reservation {
 	private String status;
 	private Timestamp regDate;
 	private Timestamp modDate;
+	private String carName;
 
-	public Reservation(int rezNum, String userId, int carCode, String carName, int carPrice, int totalPrice,
-			Timestamp borrowDate, Timestamp returnDate, String status, Timestamp regDate, Timestamp modDate) {
+	public Reservation(int rezNum, String userId, int carCode, int carPrice, int totalPrice,
+			Timestamp borrowDate, Timestamp returnDate, String status, Timestamp regDate, Timestamp modDate, String carName) {
 		super();
 		this.rezNum = rezNum;
 		this.userId = userId;
 		this.carCode = carCode;
-		this.carName = carName;
 		this.carPrice = carPrice;
 		this.totalPrice = totalPrice;
 		this.borrowDate = borrowDate;
@@ -29,6 +28,7 @@ public class Reservation {
 		this.status = status;
 		this.regDate = regDate;
 		this.modDate = modDate;
+		this.carName = carName;
 	}
 
 	public int getRezNum() {

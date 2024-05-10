@@ -6,29 +6,29 @@ public class ReservationRequestDto {
 	private int rezNum;
 	private String userId;
 	private int carCode;
-	private String carName;
 	private int carPrice;
 	private int totalPrice;
 	private Timestamp borrowDate;
 	private Timestamp returnDate;
 	private String status;
-	
+	private String carName;
+
 	public ReservationRequestDto() {
-		
+
 	}
 
-	public ReservationRequestDto(int rezNum, String userId, int carCode, String carName, int carPrice, int totalPrice,
-			Timestamp borrowDate, Timestamp returnDate, String status) {
+	public ReservationRequestDto(int rezNum, String userId, int carCode, int carPrice, int totalPrice,
+			Timestamp borrowDate, Timestamp returnDate, String status, String carName) {
 		super();
 		this.rezNum = rezNum;
 		this.userId = userId;
 		this.carCode = carCode;
-		this.carName = carName;
 		this.carPrice = carPrice;
 		this.totalPrice = totalPrice;
 		this.borrowDate = borrowDate;
 		this.returnDate = returnDate;
 		this.status = status;
+		this.carName = carName;
 	}
 
 	public int getRezNum() {
@@ -41,10 +41,6 @@ public class ReservationRequestDto {
 
 	public int getCarCode() {
 		return carCode;
-	}
-
-	public String getCarName() {
-		return carName;
 	}
 
 	public int getCarPrice() {
@@ -67,6 +63,10 @@ public class ReservationRequestDto {
 		return status;
 	}
 
+	public String getCarName() {
+		return carName;
+	}
+
 	public void setRezNum(int rezNum) {
 		this.rezNum = rezNum;
 	}
@@ -77,10 +77,6 @@ public class ReservationRequestDto {
 
 	public void setCarCode(int carCode) {
 		this.carCode = carCode;
-	}
-
-	public void setCarName(String carName) {
-		this.carName = carName;
 	}
 
 	public void setCarPrice(int carPrice) {
@@ -101,6 +97,10 @@ public class ReservationRequestDto {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public void setCarName(String carName) {
+		this.carName = carName;
 	}
 
 }

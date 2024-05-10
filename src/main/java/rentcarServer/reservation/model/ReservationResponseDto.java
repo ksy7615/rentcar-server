@@ -6,25 +6,38 @@ public class ReservationResponseDto {
 	private int rezNum;
 	private String userId;
 	private int carCode;
-	private String carName;
 	private int carPrice;
 	private int totalPrice;
 	private Timestamp borrowDate;
 	private Timestamp returnDate;
 	private String status;
+	private String carName;
 
-	public ReservationResponseDto(int rezNum, String userId, int carCode, String carName, int carPrice, int totalPrice,
-			Timestamp borrowDate, Timestamp returnDate, String status) {
+	public ReservationResponseDto(int rezNum, String userId, int carCode, int carPrice, int totalPrice,
+			Timestamp borrowDate, Timestamp returnDate, String status, String carName) {
 		super();
 		this.rezNum = rezNum;
 		this.userId = userId;
 		this.carCode = carCode;
-		this.carName = carName;
 		this.carPrice = carPrice;
 		this.totalPrice = totalPrice;
 		this.borrowDate = borrowDate;
 		this.returnDate = returnDate;
 		this.status = status;
+		this.carName = carName;
+	}
+
+	public ReservationResponseDto(int rezNum, String userId, int carCode, int carPrice, Timestamp borrowDate,
+			Timestamp returnDate, String status, String carName) {
+		super();
+		this.rezNum = rezNum;
+		this.userId = userId;
+		this.carCode = carCode;
+		this.carPrice = carPrice;
+		this.borrowDate = borrowDate;
+		this.returnDate = returnDate;
+		this.status = status;
+		this.carName = carName;
 	}
 
 	public int getRezNum() {
@@ -37,10 +50,6 @@ public class ReservationResponseDto {
 
 	public int getCarCode() {
 		return carCode;
-	}
-
-	public String getCarName() {
-		return carName;
 	}
 
 	public int getCarPrice() {
@@ -63,6 +72,10 @@ public class ReservationResponseDto {
 		return status;
 	}
 
+	public String getCarName() {
+		return carName;
+	}
+
 	public void setRezNum(int rezNum) {
 		this.rezNum = rezNum;
 	}
@@ -73,10 +86,6 @@ public class ReservationResponseDto {
 
 	public void setCarCode(int carCode) {
 		this.carCode = carCode;
-	}
-
-	public void setCarName(String carName) {
-		this.carName = carName;
 	}
 
 	public void setCarPrice(int carPrice) {
@@ -99,4 +108,7 @@ public class ReservationResponseDto {
 		this.status = status;
 	}
 
+	public void setCarName(String carName) {
+		this.carName = carName;
+	}
 }
