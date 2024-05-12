@@ -39,6 +39,17 @@ public class ReservationResponseDto {
 		this.status = status;
 		this.carName = carName;
 	}
+	
+	public ReservationResponseDto(String userId, int carCode, int totalPrice, Timestamp borrowDate,
+			Timestamp returnDate, String status, String carName) {
+		super();
+		this.userId = userId;
+		this.carCode = carCode;
+		this.totalPrice = totalPrice;
+		this.borrowDate = borrowDate;
+		this.returnDate = returnDate;
+		this.carName = carName;
+	}
 
 	public int getRezNum() {
 		return rezNum;
