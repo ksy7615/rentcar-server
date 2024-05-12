@@ -8,8 +8,8 @@
 <html>
 <head>
 </head>
+<link rel="stylesheet" href="/resources/style/board.css?after">
 <c:import url="/header" />
-<link rel="stylesheet" href="/resources/style/board.css">
 <body>
 	<section id="board">
 		<h1>게시판</h1>

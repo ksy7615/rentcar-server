@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="/resources/style/myPage.css">
 </head>
 <c:import url="/header" />
 <body>
@@ -13,7 +14,7 @@
    </c:if>
    
 	<section id="root">
-		<h1>${user.userName}님환영합니다!</h1>
+		<h1>${user.userName}님 환영합니다!</h1>
 
 		<button onclick="location.href='/updateUser'">회원정보 수정</button>
 		<button onclick="location.href='/deleteUser'">회원 탈퇴</button>
