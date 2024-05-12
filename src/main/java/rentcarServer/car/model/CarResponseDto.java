@@ -7,13 +7,13 @@ public class CarResponseDto {
 	private String brand;
 	private String name;
 	private String type;
-	private int seat;
+	private String seat;
 	private String oil;
 	private int year;
 	private int price;
 
 	public CarResponseDto(int code, String licensePlate, String abroad, String brand, String name, String type,
-			int seat, String oil, int year, int price) {
+			String seat, String oil, int year, int price) {
 		super();
 		this.code = code;
 		this.licensePlate = licensePlate;
@@ -51,7 +51,7 @@ public class CarResponseDto {
 		return type;
 	}
 
-	public int getSeat() {
+	public String getSeat() {
 		return seat;
 	}
 
@@ -91,7 +91,7 @@ public class CarResponseDto {
 		this.type = type;
 	}
 
-	public void setSeat(int seat) {
+	public void setSeat(String seat) {
 		this.seat = seat;
 	}
 
@@ -106,5 +106,5 @@ public class CarResponseDto {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-
+	
 }
